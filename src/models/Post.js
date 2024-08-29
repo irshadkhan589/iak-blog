@@ -15,10 +15,13 @@ const postSchema = new mongoose.Schema({
         required: true,
     },
     tags: [String],
-    categories: [String],
+    category: String,
     createdAt: {
         type: Date,
         default: Date.now,
+    },
+    updatedAt: {
+        type: Date,
     },
 });
 

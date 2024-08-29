@@ -1,7 +1,7 @@
 {
   "name": "p022blogapi",
   "version": "1.0.0",
-  "description": "This is a simple Express backend for your application.",
+  "description": "Express backend for iak blog",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,8 +13,10 @@
     "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.5.4"
+    "mongoose": "^8.5.4",
+    "serverless-http": "^3.2.0"
   },
   "devDependencies": {
     "chai": "^5.1.1",
