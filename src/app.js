@@ -21,6 +21,7 @@ app.get('/', (req, res) => {
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/posts', postRoutes); // Use the post routes
+app.use('/api/comments', commentRoutes); // Use the comment routes
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
