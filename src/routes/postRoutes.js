@@ -19,4 +19,7 @@ router.put('/:id', authMiddleware, postController.updatePost);
 // Delete a blog post
 router.delete('/:id', authMiddleware, postController.deletePost);
 
+//Search posts by keyword
+router.get('/search', postController.searchPosts);
+
 module.exports = router;

@@ -85,3 +85,23 @@ exports.deletePost = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
+// Search posts by keyword
+exports.searchPosts = async (req, res) => {
+    try {
+        const { keyword } = req.query;
+
+        if (!keyword) {
+            return res.status(400).json({ error: 'Keyword query parameter is required' });
+        }
+
+        // Perform the text search
+        const posts = await Post.find({ $text: { $search: keyword } })
+            .populate('author', 'username')
+            .sort({ createdAt: -1 });
+
+        res.status(200).json(posts);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};

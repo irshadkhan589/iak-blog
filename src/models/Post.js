@@ -25,6 +25,9 @@ const postSchema = new mongoose.Schema({
     },
 });
 
+// Create text indexes for full-text search
+postSchema.index({ title: 'text', content: 'text' });
+
 const Post = mongoose.model('Post', postSchema);
 
 module.exports = Post;
