@@ -21,3 +21,12 @@ describe('Database Connection', () => {
         expect(state).to.equal(1);
     });
 });
+
+// "devDependencies": {
+  //   "chai": "^5.1.1",
+  //   "mocha": "^10.7.3",
+  //   "mongodb-memory-server": "^10.0.0",
+  //   "nodemon": "^3.1.4",
+  //   "serverless-dotenv-plugin": "^6.0.0",
+  //   "supertest": "^7.0.0"
+  // }

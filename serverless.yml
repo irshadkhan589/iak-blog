@@ -4,31 +4,33 @@ frameworkVersion: '3'
 
 provider:
   name: aws
-  runtime: nodejs18.x
-  region: us-east-1 
+  runtime: nodejs20.x
+  profile: serverlessUser
+  region: ap-south-1 
   stage: dev 
-  environment:
-    PORT: 3000
-    MONGODB_URI: ${env:MONGODB_URI}
-    JWT_SECRET: ${env:JWT_SECRET}
+  # environment:
+    # PORT: 3000
+    # MONGODB_URI: ${env:MONGODB_URI}
+    # JWT_SECRET: ${env:JWT_SECRET}
 
 functions:
   app:
-    handler: app.handler
+    handler: src/app.handler
     events:
       - httpApi: 
           path: /
           method: ANY
       - httpApi:
-          path: '{proxy+}' # Capture all routes
+          path: /{proxy+} # Capture all routes
           method: ANY
 
 
 package:
   exclude:
-    - node_modules/**
     - test/**
     - .vscode/**
     - .env
 
 
+plugins:
+  - serverless-dotenv-plugin

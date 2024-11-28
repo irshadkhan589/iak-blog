@@ -33,7 +33,7 @@ A RESTful API for managing a blog. This API allows users to create, read, update
      
 
 ## API Endpoints
-
+**Base URL**: 'https://ixfu5mzrsk.execute-api.ap-south-1.amazonaws.com'
 ### User Authentication
 
 - **Register**: `POST /api/auth/register`
