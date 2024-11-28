@@ -9,29 +9,6 @@ A RESTful API for managing a blog. This API allows users to create, read, update
 - **Search**: Search posts by title and content.
 - **Rate Limiting**: Limits API calls to 10 requests per minute.
 
-## Installation
-
-1. **Clone the Repository**:
-
-   
-   git clone https://github.com/irshadkhan589/iak-blog.git
-   cd blog-api
-   
-
-2. **Install Dependencies**:
-
-   
-   npm install
-   
-
-3. **Set Up Environment Variables**:
-   - Create a `.env` file in the root directory with the following variables:
-
-     PORT=3000
-     MONGODB_URI=<your-mongodb-uri>
-     JWT_SECRET=<your-jwt-secret>
-     
-
 ## API Endpoints
 **Base URL**: 'https://ixfu5mzrsk.execute-api.ap-south-1.amazonaws.com'
 ### User Authentication
@@ -84,17 +61,33 @@ To deploy this API using AWS Lambda and Serverless Framework:
    
 
 2. **Configure `serverless.yml`**:
-   - Ensure `serverless.yml` is configured for AWS Lambda with Node.js 18 runtime.
+   - Ensure `serverless.yml` is configured for AWS Lambda with Node.js 20 runtime.
+
+
+3. **Running Project Locally**:
 
    
+   git clone https://github.com/irshadkhan589/iak-blog.git
+   cd blog-api
+   
 
-3. **Testing Locally**:
-   - Run the following command to test the API locally:
+2. **Install Dependencies**:
+
+   
+   npm install
+   
+
+3. **Set Up Environment Variables**:
+   - Create a `.env` file in the root directory with the following variables:
+
+     PORT=3000
+     MONGODB_URI=<your-mongodb-uri>
+     JWT_SECRET=<your-jwt-secret>
+     
+  - Run the following command to test the API locally:
 
      
      npx nodemon src/app
-     
-
 ## Testing
 
 Run unit tests with Mocha and Chai:
